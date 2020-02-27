@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:23:28 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/02/26 16:19:37 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/02/27 19:00:54 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ t_map	*split_nb(char *str, t_map *a, int y)
 	{
 		while (*str == ' ')
 			str++;
-		a->arr[i] = fill_point((double)(i % a->width), (double)y, \
-				(double)ft_atoi_base(str));
+		a->arr[i] = fill_point((double)(i % a->width - a->width / 2),
+				(double)(y - a->height / 2), (double)ft_atoi_base(str));
 		while (*str && *str != ' ' && *str != ',')
 			str++;
 		if (*str == ',')

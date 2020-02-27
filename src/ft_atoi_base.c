@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:28:16 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/02/26 15:28:16 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/02/27 14:34:24 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,8 @@ int 	ft_atoi_base1(char *str, int base)
 
 int 	ft_atoi_base(char *str)
 {
-	if (*str == '0' && *(str + 1) != '\0')
-		return (0);
-	else if (*str == '0' && *(str + 1) != 'x')
+	if (*str == '0' && *(str + 1) != 'x' && *(str + 1) != ' ' &&
+	*(str + 1) != '\0')
 		return (ft_atoi_base1(str + 1, 8));
 	else if (*str == '0' && *(str + 1) == 'x')
 		return (ft_atoi_base1(str + 2, 16));

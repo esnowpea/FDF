@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:24:34 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/02/26 17:36:30 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/02/27 15:38:30 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,22 @@
 
 # define WIN_HEIGHT	1000
 # define WIN_WIDTH	2000
+# define ESC		53
+# define LEFT		123
+# define RIGHT		124
+# define UP			126
+# define DOWN		125
+# define RIGHT_R	47
+# define LEFT_R		43
 
 typedef struct			s_point
 {
 	double				x;
 	double				y;
 	double				z;
+	double 				r;
+	double 				fi;
+	double 				tet;
 	int 				xp;
 	int 				yp;
 	int					color;
@@ -53,6 +63,8 @@ typedef struct			s_map
 	t_point				m;
 	t_point 			x;
 	t_point 			y;
+	int 				x_mouse;
+	int 				y_mouse;
 	int 				width;
 	int 				height;
 	void				*mlx;
@@ -68,5 +80,7 @@ void					mlx_line_put(void *mlx, void *win,
 						t_point p1, t_point p2);
 double					sqr(double a);
 t_point					fill_point(double x, double y, double z);
+void					projection(t_map *fdf);
+int						mouse_move(int x, int y, void *param);
 
 #endif
