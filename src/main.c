@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:23:55 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/02/27 17:57:30 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/02/27 19:32:41 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ int main(int ac, char **av)
 	fdf->black_image = mlx_new_image(fdf->mlx, WIN_WIDTH, WIN_HEIGHT);
 	int i = 0;
 	fdf->m.r = 1;
-	fdf->m.fi = 45.0 / 360 * M_PI;
-	fdf->m.tet = 45.0 / 360 * M_PI;
+	fdf->m.fi = -70.0 / 360 * M_PI;
+	fdf->m.tet = 254.0 / 360 * M_PI;
 	fdf->m.x = fdf->m.r * sin(fdf->m.tet) * cos(fdf->m.fi);
 	fdf->m.y = fdf->m.r * sin(fdf->m.tet) * sin(fdf->m.fi);
 	fdf->m.z = fdf->m.r * cos(fdf->m.tet);

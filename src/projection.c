@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 16:44:34 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/02/27 19:11:07 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/02/27 19:15:30 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@ int 		compare_zero(double a)
 		return (1);
 	else
 		return (0);
+}
+
+t_point		vector_mult(t_point a, t_point b)
+{
+	t_point out;
+
+	out.x = a.y * b.z - a.z * b.y;
+	out.y = a.z * b.x - a.x * b.z;
+	out.z = a.x * b.y - a.y * b.x;
+	return (out);
 }
 /*
 t_point 	get_x(t_map *fdf)
@@ -42,12 +52,9 @@ t_point 	get_x(t_map *fdf)
 {
 	t_point a;
 
+
 	if (fdf->m.y != 0 && fdf->m.x != 0)
-	{
-		a.x = -fdf->m.y / fabs(fdf->m.y);
-		a.y = fdf->m.x / fabs(fdf->m.y);
-		a.z = 0;
-	}
+		a = vector_mult(fill_point(0, 0, 1), fdf->m);
 	else
 		a = fdf->x;
 	return (a);
@@ -55,12 +62,7 @@ t_point 	get_x(t_map *fdf)
 
 t_point 	get_y(t_map *fdf)
 {
-	t_point b;
-
-	b.x = fdf->m.y * fdf->x.z - fdf->m.z * fdf->x.y;
-	b.y = fdf->m.z * fdf->x.x - fdf->m.x * fdf->x.z;
-	b.z = fdf->m.x * fdf->x.y - fdf->m.y * fdf->x.x;
-	return (b);
+	return (vector_mult(fdf->m, fdf->x));
 }
 /*
 t_point 	get_y(t_map *fdf)
