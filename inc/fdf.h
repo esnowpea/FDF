@@ -30,8 +30,6 @@
 # define RIGHT		124
 # define UP			126
 # define DOWN		125
-# define RIGHT_R	47
-# define LEFT_R		43
 
 typedef struct			s_point
 {
