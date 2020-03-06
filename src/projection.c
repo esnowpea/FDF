@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 16:44:34 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/05 20:48:52 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/06 15:35:04 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_point		vector_mult(t_point a, t_point b)
 	return (out);
 }
 
-t_point 	get_x(t_map *fdf)
+t_point		get_x(t_map *fdf)
 {
 	t_point a;
 
@@ -35,12 +35,12 @@ t_point 	get_x(t_map *fdf)
 	return (a);
 }
 
-t_point 	get_y(t_map *fdf)
+t_point		get_y(t_map *fdf)
 {
 	return (vector_mult(fdf->x, fdf->m));
 }
 
-double length_r(t_point a)
+double		length_r(t_point a)
 {
 	return (sqrt(sqr(a.x) + sqr(a.y) + sqr(a.z)));
 }
@@ -60,20 +60,15 @@ void		projection(t_map *fdf)
 	fdf->y.x /= p;
 	fdf->y.y /= p;
 	fdf->y.z /= p;
-	printf("m:  x = %f, y = %f, z = %f\n", fdf->m.x, fdf->m.y, fdf->m.z);
-	printf("x:  x = %f, y = %f, z = %f\n", fdf->x.x, fdf->x.y, fdf->x.z);
-	printf("y:  x = %f, y = %f, z = %f\n", fdf->y.x, fdf->y.y, fdf->y.z);
-	printf("fi = %f, tet = %f\n", fdf->m.fi * 180 / M_PI, fdf->m.tet * 180 /
-														  M_PI);
 	i = 0;
 	while (i < (fdf->width * fdf->height))
 	{
 		fdf->arr[i].xp = (int)(fdf->arr[i].x * fdf->x.x +
 				fdf->arr[i].y * fdf->y.x +
-				fdf->arr[i].z * fdf->m.x) + WIN_WIDTH / 2;
+				fdf->arr[i].z * fdf->m.x) + fdf->shift_x;
 		fdf->arr[i].yp = (int)(fdf->arr[i].x * fdf->x.y +
 				fdf->arr[i].y * fdf->y.y +
-				fdf->arr[i].z * fdf->m.y) + WIN_HEIGHT / 2;
+				fdf->arr[i].z * fdf->m.y) + fdf->shift_y;
 		i++;
 	}
 }

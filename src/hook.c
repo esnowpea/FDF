@@ -6,56 +6,101 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 16:29:56 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/05 20:13:18 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/06 17:19:10 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int		key_hook(int keycode, void *param)
+int		key_press(int keycode, void *param)
 {
 	t_map	*fdf;
-	int		i;
 
 	fdf = (t_map *)param;
 	if (keycode == ESC)
 		exit(0);
 	if (keycode == LEFT)
-		fdf->m.fi -= 2.0 / 180 * M_PI;
+		fdf->shift_x -= 10;
 	if (keycode == RIGHT)
-		fdf->m.fi += 2.0 / 180 * M_PI;
+		fdf->shift_x += 10;
 	if (keycode == UP)
-		fdf->m.tet -= 5.0 / 180 * M_PI;
+		fdf->shift_y -= 10;
 	if (keycode == DOWN)
-		fdf->m.tet += 5.0 / 180 * M_PI;
+		fdf->shift_y += 10;
+	if (keycode == CTRL)
+		fdf->ctrl_press = 1;
+	if (keycode == PLUS)
+		scale(fdf, 1, 1.1);
+	if (keycode == MINUS)
+		scale(fdf, 1, 0.9);
+	print_image(fdf);
+	return (1);
+}
 
-	fdf->m.x = fdf->m.r * sin(fdf->m.tet) * cos(fdf->m.fi);
-	fdf->m.y = fdf->m.r * sin(fdf->m.tet) * sin(fdf->m.fi);
-	fdf->m.z = fdf->m.r * cos(fdf->m.tet);
+int		key_release(int keycode, void *param)
+{
+	t_map	*fdf;
 
-	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->black_image, 0,0);
-	projection(fdf);
-	i = 0;
-	while (i < (fdf->width * fdf->height))
+	fdf = (t_map *)param;
+	if (keycode == CTRL)
+		fdf->ctrl_press = 0;
+	return (1);
+}
+
+int		mouse_press(int button, int x, int y, void *param)
+{
+	t_map	*fdf;
+
+	fdf = (t_map *)param;
+	if (button == LEFT_MOUSE)
 	{
-		if (i % fdf->width < (fdf->width - 1))
-		{
-			mlx_line_put(fdf->mlx, fdf->win, fdf->arr[i],
-						 fdf->arr[i + 1]);
-		}
-		if (i / fdf->width < (fdf->height - 1))
-			mlx_line_put(fdf->mlx, fdf->win, fdf->arr[i],
-						 fdf->arr[i + fdf->width]);
-		i++;
+		fdf->mouse_press = 1;
+		fdf->x_mouse = x;
+		fdf->y_mouse = y;
+	}
+	if (button == SCROLL_DOWN)
+		scale(fdf, 1.1, 1.1);
+	if (button == SCROLL_UP)
+		scale(fdf, 0.9, 0.9);
+	print_image(fdf);
+	return (1);
+}
+
+int		mouse_move(int x, int y, void *param)
+{
+	t_map	*fdf;
+
+	fdf = (t_map *)param;
+	if (fdf->mouse_press && fdf->ctrl_press == 0)
+	{
+		fdf->m.fi += (double)(x - fdf->x_mouse) / 10 / 180 * M_PI;
+		fdf->m.tet += (double)(y - fdf->y_mouse) / 10 / 180 * M_PI;
+		fdf->x_mouse = x;
+		fdf->y_mouse = y;
+		fdf->m.x = fdf->m.r * sin(fdf->m.tet) * cos(fdf->m.fi);
+		fdf->m.y = fdf->m.r * sin(fdf->m.tet) * sin(fdf->m.fi);
+		fdf->m.z = fdf->m.r * cos(fdf->m.tet);
+		print_image(fdf);
+	}
+	if (fdf->mouse_press && fdf->ctrl_press)
+	{
+		fdf->shift_x += x - fdf->x_mouse;
+		fdf->shift_y += y - fdf->y_mouse;
+		fdf->x_mouse = x;
+		fdf->y_mouse = y;
+		print_image(fdf);
 	}
 	return (1);
 }
 
-//int		mouse_move(int x, int y, void *param)
-//{
-//	t_map	*fdf;
-//	int		i;
-//
-//	fdf = (t_map *)param;
-//
-//}
+int		mouse_release(int button, int x, int y, void *param)
+{
+	t_map	*fdf;
+
+	fdf = (t_map *)param;
+	if (button == LEFT_MOUSE)
+		fdf->mouse_press = 0;
+	fdf->x_mouse = x;
+	fdf->y_mouse = y;
+	return (1);
+}

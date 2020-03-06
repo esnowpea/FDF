@@ -32,7 +32,7 @@ HEADERS_DIR = ./inc/
 HEADERS = $(addprefix $(HEADERS_DIR), $(HEADERS_LIST))
 
 SRC_DIR = src/
-SRC_LIST =	main.c read_map.c ft_atoi_base.c hook.c mlx_put_line.c projection.c
+SRC_LIST =	main.c read_map.c ft_atoi_base.c hook.c mlx_put_line.c projection.c event_handler.c
 SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
 
 OBJ_DIR = obj/

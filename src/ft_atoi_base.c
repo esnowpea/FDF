@@ -12,9 +12,9 @@
 
 #include "fdf.h"
 
-int 	ft_atoi_base1(char *str, int base)
+int		ft_atoi_base1(char *str, int base)
 {
-	int 	minus;
+	int		minus;
 	int		a;
 	char	s[] = "0123456789abcdef";
 
@@ -35,7 +35,7 @@ int 	ft_atoi_base1(char *str, int base)
 	return (minus * a);
 }
 
-int 	ft_atoi_base(char *str)
+int		ft_atoi_base(char *str)
 {
 	if (*str == '0' && *(str + 1) != 'x' && *(str + 1) != ' ' &&
 	*(str + 1) != '\0')

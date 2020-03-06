@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:23:28 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/02/27 19:00:54 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/06 15:38:05 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ t_map	*split_nb(char *str, t_map *a, int y)
 
 int		find_height(char *av)
 {
-	int 	fd;
-	int 	i;
-	char 	*s;
+	int		fd;
+	int		i;
+	char	*s;
 
 	fd = open(av, O_RDONLY);
 	i = 0;
@@ -67,10 +67,10 @@ int		find_height(char *av)
 
 int		find_width(char *av)
 {
-	int 	fd;
-	int 	nb;
-	char 	*s;
-	char 	*tmp;
+	int		fd;
+	int		nb;
+	char	*s;
+	char	*tmp;
 
 	tmp = 0;
 	fd = open(av, O_RDONLY);
@@ -92,11 +92,11 @@ int		find_width(char *av)
 	return (nb);
 }
 
-t_map 	*read_map(char *av)
+t_map	*read_map(char *av)
 {
 	int		fd;
-	char 	*s;
-	int 	i;
+	char	*s;
+	int		i;
 	t_map	*out;
 
 	if (!(out = (t_map*)malloc(sizeof(t_map))))
