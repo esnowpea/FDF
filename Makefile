@@ -6,7 +6,7 @@
 #    By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/02 13:56:52 by esnowpea          #+#    #+#              #
-#    Updated: 2020/02/26 14:24:35 by esnowpea         ###   ########.fr        #
+#    Updated: 2020/03/08 15:07:55 by esnowpea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = fdf
 
 CC = gcc
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -O1
 LIBFT_FLAGS = -L$(LIBFT_DIR) -lft -L$(LIBMLX_DIR) -lmlx -framework OpenGL -framework AppKit
 
 INCLUDES = -I$(HEADERS_DIR) -I$(LIBFT_HEADERS) -I$(LIBMLX_HEADERS)
