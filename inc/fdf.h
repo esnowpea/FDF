@@ -89,6 +89,7 @@ int						ft_atoi_base(char *str);
 void					mlx_line_put(void *mlx, void *win,
 						t_point p1, t_point p2);
 double					sqr(double a);
+void					up_to_low(char **s);
 t_point					fill_point(double x, double y, double z);
 void					projection(t_map *fdf);
 void					scale(t_map *fdf, double xy, double z);

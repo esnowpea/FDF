@@ -6,21 +6,11 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:23:28 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/06 15:38:05 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/08 13:42:44 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-t_point	fill_point(double x, double y, double z)
-{
-	t_point		a;
-
-	a.x = x;
-	a.y = y;
-	a.z = z;
-	return (a);
-}
 
 t_map	*split_nb(char *str, t_map *a, int y)
 {
@@ -88,15 +78,14 @@ int		find_width(char *av)
 		}
 	}
 	free(tmp);
+	while (get_next_line(fd, &s) > 0)
+		free(s);
 	close(fd);
 	return (nb);
 }
 
-t_map	*read_map(char *av)
+t_map	*fill_map(char *av)
 {
-	int		fd;
-	char	*s;
-	int		i;
 	t_map	*out;
 
 	if (!(out = (t_map*)malloc(sizeof(t_map))))
@@ -106,12 +95,31 @@ t_map	*read_map(char *av)
 	out->arr = (t_point*)malloc(sizeof(t_point) * out->height * out->width);
 	if (!out->arr)
 		return (free_fdf(out));
+	return (out);
+}
+
+t_map	*read_map(char *av)
+{
+	int		fd;
+	char	*s;
+	int		i;
+	t_map	*out;
+
+	if (!(out = fill_map(av)))
+		return (0);
 	fd = open(av, O_RDONLY);
 	i = 0;
 	while (get_next_line(fd, &s) > 0)
 	{
-		out = split_nb(s, out, i++);
+		up_to_low(&s);
+		if (!(out = split_nb(s, out, i++)))
+			return (0);
 		free(s);
+	}
+	if (i == 0)
+	{
+		write(1, "No data found.\n", 15);
+		return (0);
 	}
 	close(fd);
 	return (out);

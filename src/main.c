@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:23:55 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/06 17:26:42 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/08 13:32:01 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,16 @@ void	*free_fdf(t_map *a)
 	if (a)
 		free(a);
 	return (0);
+}
+
+t_point	fill_point(double x, double y, double z)
+{
+	t_point		a;
+
+	a.x = x;
+	a.y = y;
+	a.z = z;
+	return (a);
 }
 
 void	initialization(t_map *fdf)
@@ -44,7 +54,8 @@ int		main(int ac, char **av)
 
 	if (ac > 2)
 		return (0);
-	fdf = read_map(av[1]);
+	if (!(fdf = read_map(av[1])))
+		return (0);
 	initialization(fdf);
 	print_image(fdf);
 	event_handler((void*)fdf);
