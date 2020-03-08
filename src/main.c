@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:23:55 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/08 13:32:01 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/08 14:53:16 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ t_point	fill_point(double x, double y, double z)
 void	initialization(t_map *fdf)
 {
 	fdf->mlx = mlx_init();
-	fdf->win = mlx_new_window(fdf->mlx, WIN_WIDTH, WIN_HEIGHT, "test");
-	fdf->black_image = mlx_new_image(fdf->mlx, WIN_WIDTH, WIN_HEIGHT);
+	fdf->win = mlx_new_window(fdf->mlx, WIN_WIDTH, WIN_HEIGHT, "fdf");
+	fdf->img.img_ptr = mlx_new_image(fdf->mlx, WIN_WIDTH, WIN_HEIGHT);
+	fdf->img.data = mlx_get_data_addr(fdf->img.img_ptr, &fdf->img.bpp,
+			&fdf->img.size_l, &fdf->img.endian);
 	fdf->m.r = 1;
 	fdf->m.fi = -120.0 / 180 * M_PI;
 	fdf->m.tet = 120.0 / 180 * M_PI;

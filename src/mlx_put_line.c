@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 16:38:07 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/06 18:34:08 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/08 14:55:55 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,30 @@ t_line		get_start(t_point p1, t_point p2)
 	return (line);
 }
 
-void		mlx_line_put(void *mlx, void *win, t_point p1, t_point p2)
+void		get_color(t_map *fdf, t_line *line, t_point p1, t_point p2)
+{
+	line->color_r -= step_color_r(p1.color, p2.color, line->ds, 16);
+	line->color_g -= step_color_r(p1.color, p2.color, line->ds, 8);
+	line->color_b -= step_color_r(p1.color, p2.color, line->ds, 0);
+	if (p1.xp >= 0 && p1.xp <= WIN_WIDTH && p1.yp >= 0 && p1.yp <= WIN_HEIGHT)
+	{
+		fdf->img.data[p1.xp * 4 + 4 * WIN_WIDTH * p1.yp] =
+				(char)(line->color_b);
+		fdf->img.data[p1.xp * 4 + 4 * WIN_WIDTH * p1.yp + 1] =
+				(char)(line->color_g);
+		fdf->img.data[p1.xp * 4 + 4 * WIN_WIDTH * p1.yp + 2] =
+				(char)(line->color_r);
+	}
+}
+
+void		mlx_line_put(t_map *fdf, t_point p1, t_point p2)
 {
 	t_line		line;
 
 	line = get_start(p1, p2);
 	while (p1.xp != p2.xp || p1.yp != p2.yp)
 	{
-		line.color_r -= step_color_r(p1.color, p2.color, line.ds, 16);
-		line.color_g -= step_color_r(p1.color, p2.color, line.ds, 8);
-		line.color_b -= step_color_r(p1.color, p2.color, line.ds, 0);
-		p1.color = ((int)line.color_r << 16) +
-				((int)line.color_g << 8) + (int)line.color_b;
-		mlx_pixel_put(mlx, win, p1.xp, p1.yp, p1.color);
+		get_color(fdf, &line, p1, p2);
 		line.derror = line.error * 2;
 		if (line.derror > -line.dy)
 		{

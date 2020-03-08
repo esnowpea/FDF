@@ -6,7 +6,7 @@
 /*   By: esnowpea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/06 16:03:57 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/06 18:46:50 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/08 14:53:16 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,45 @@ void	scale(t_map *fdf, double xy, double z)
 	}
 }
 
+void	get_black_image(t_map *fdf)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	while (i < WIN_WIDTH)
+	{
+		j = 0;
+		while (j < WIN_HEIGHT)
+		{
+			fdf->img.data[i * 4 + 4 * WIN_WIDTH * j] = 0;
+			fdf->img.data[i * 4 + 4 * WIN_WIDTH * j + 1] = 0;
+			fdf->img.data[i * 4 + 4 * WIN_WIDTH * j + 2] = 0;
+			fdf->img.data[i * 4 + 4 * WIN_WIDTH * j + 3] = 0;
+			j++;
+		}
+		i++;
+	}
+}
+
 void	print_image(t_map *fdf)
 {
 	int		i;
 
-	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->black_image, 0, 0);
 	projection(fdf);
 	i = 0;
 	while (i < (fdf->width * fdf->height))
 	{
 		if (i % fdf->width < (fdf->width - 1))
 		{
-			mlx_line_put(fdf->mlx, fdf->win, fdf->arr[i], fdf->arr[i + 1]);
+			mlx_line_put(fdf, fdf->arr[i], fdf->arr[i + 1]);
 		}
 		if (i / fdf->width < (fdf->height - 1))
-			mlx_line_put(fdf->mlx, fdf->win, fdf->arr[i],
-					fdf->arr[i + fdf->width]);
+			mlx_line_put(fdf, fdf->arr[i], fdf->arr[i + fdf->width]);
 		i++;
 	}
+	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img.img_ptr, 0, 0);
+	get_black_image(fdf);
 }
 
 int		close_press(void *param)

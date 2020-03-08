@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:24:34 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/06 18:31:58 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/08 14:36:19 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,15 @@ typedef struct			s_line
 	double				color_b;
 }						t_line;
 
+typedef struct			s_img
+{
+	void				*img_ptr;
+	char				*data;
+	int					size_l;
+	int					bpp;
+	int					endian;
+}						t_img;
+
 typedef struct			s_map
 {
 	t_point				*arr;
@@ -80,14 +89,13 @@ typedef struct			s_map
 	int					height;
 	void				*mlx;
 	void				*win;
-	void				*black_image;
+	t_img				img;
 }						t_map;
 
 void					*free_fdf(t_map *a);
 t_map					*read_map(char *av);
 int						ft_atoi_base(char *str);
-void					mlx_line_put(void *mlx, void *win,
-						t_point p1, t_point p2);
+void					mlx_line_put(t_map *fdf, t_point p1, t_point p2);
 double					sqr(double a);
 void					up_to_low(char **s);
 t_point					fill_point(double x, double y, double z);
