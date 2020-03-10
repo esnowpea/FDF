@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:24:34 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/10 18:52:36 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/10 19:16:22 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define WIN_WIDTH		2000
 # define ESC			53
 # define LEFT_MOUSE 	1
+# define MIDDLE_MOUSE 	3
 # define SCROLL_UP		4
 # define SCROLL_DOWN	5
 # define I				34

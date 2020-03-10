@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:23:55 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/10 19:12:17 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/10 19:13:51 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ int		main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		write(1, "Usage: ",7);
-		write(1, av[0],ft_strlen(av[0]));
-		write(1, " <filename>\n",12);
+		write(1, "Usage: ", 7);
+		write(1, av[0], ft_strlen(av[0]));
+		write(1, " <filename>\n", 12);
 		return (0);
 	}
 	if (!(fdf = read_map(av[1])))

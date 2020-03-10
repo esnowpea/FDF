@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 16:29:56 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/10 18:53:26 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/10 19:17:16 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,13 @@ int		mouse_press(int button, int x, int y, void *param)
 	t_map	*fdf;
 
 	fdf = (t_map *)param;
+	if (button == MIDDLE_MOUSE)
+	{
+		fdf->ctrl_press = 1;
+		fdf->mouse_press = 1;
+		fdf->x_mouse = x;
+		fdf->y_mouse = y;
+	}
 	if (button == LEFT_MOUSE)
 	{
 		fdf->mouse_press = 1;
@@ -99,6 +106,11 @@ int		mouse_release(int button, int x, int y, void *param)
 	t_map	*fdf;
 
 	fdf = (t_map *)param;
+	if (button == MIDDLE_MOUSE)
+	{
+		fdf->ctrl_press = 0;
+		fdf->mouse_press = 0;
+	}
 	if (button == LEFT_MOUSE)
 		fdf->mouse_press = 0;
 	fdf->x_mouse = x;
