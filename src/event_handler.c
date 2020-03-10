@@ -6,7 +6,7 @@
 /*   By: esnowpea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/06 16:03:57 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/10 12:04:01 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/10 15:22:53 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,54 +15,37 @@
 void	scale(t_map *fdf, double xy, double z)
 {
 	int		i;
-
-	i = 0;
-	while (i < fdf->height * fdf->width)
-	{
-		fdf->arr[i].x *= xy;
-		fdf->arr[i].y *= xy;
-		fdf->arr[i].z *= z;
-		i++;
-	}
-}
-
-void	get_black_image(t_map *fdf)
-{
-	int		i;
 	int		j;
 
 	i = 0;
-	while (i < WIN_WIDTH)
+	while (i < (fdf->height))
 	{
 		j = 0;
-		while (j < WIN_HEIGHT)
+		while (j < fdf->width)
 		{
-			fdf->img.data[i * 4 + 4 * WIN_WIDTH * j] = 0;
-			fdf->img.data[i * 4 + 4 * WIN_WIDTH * j + 1] = 0;
-			fdf->img.data[i * 4 + 4 * WIN_WIDTH * j + 2] = 0;
-			fdf->img.data[i * 4 + 4 * WIN_WIDTH * j + 3] = 0;
+			fdf->arr[i][j].x *= xy;
+			fdf->arr[i][j].y *= xy;
+			fdf->arr[i][j].z *= z;
 			j++;
 		}
 		i++;
 	}
 }
 
-void	print_image(t_map *fdf)
+double	angle(double fi)
 {
-	int i;
+	while (fi > M_PI)
+		fi -= 2 * M_PI;
+	while (fi <= -1 * M_PI)
+		fi += 2 * M_PI;
+	return (fi);
+}
 
-	projection(fdf);
-	i = 0;
-	while (i < (fdf->width * fdf->height))
-	{
-		if (i % fdf->width < (fdf->width - 1))
-			mlx_line_put(fdf, fdf->arr[i], fdf->arr[i + 1]);
-		if (i / fdf->width < (fdf->height - 1))
-			mlx_line_put(fdf, fdf->arr[i], fdf->arr[i + fdf->width]);
-		i++;
-	}
-	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img.img_ptr, 0, 0);
-	get_black_image(fdf);
+void	vector_mod(t_point *a, double b)
+{
+	a->x /= b;
+	a->y /= b;
+	a->z /= b;
 }
 
 int		close_press(void *param)

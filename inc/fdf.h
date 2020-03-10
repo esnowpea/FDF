@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:24:34 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/08 14:36:19 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/10 18:52:36 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,7 @@
 # define LEFT_MOUSE 	1
 # define SCROLL_UP		4
 # define SCROLL_DOWN	5
-# define LEFT			123
-# define RIGHT			124
-# define UP				126
-# define DOWN			125
+# define I				34
 # define CTRL			256
 # define PLUS			69
 # define MINUS			78
@@ -75,10 +72,11 @@ typedef struct			s_img
 
 typedef struct			s_map
 {
-	t_point				*arr;
+	t_point				**arr;
 	t_point				m;
 	t_point				x;
 	t_point				y;
+	t_point				v[3];
 	int					mouse_press;
 	int					ctrl_press;
 	int					x_mouse;
@@ -97,6 +95,9 @@ t_map					*read_map(char *av);
 int						ft_atoi_base(char *str);
 void					mlx_line_put(t_map *fdf, t_point p1, t_point p2);
 double					sqr(double a);
+double					angle(double fi);
+double					length_r(t_point a);
+void					vector_mod(t_point *a, double b);
 void					up_to_low(char **s);
 t_point					fill_point(double x, double y, double z);
 void					projection(t_map *fdf);

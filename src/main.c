@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:23:55 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/10 09:54:22 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/10 18:47:46 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,18 @@
 
 void	*free_fdf(t_map *a)
 {
+	int		i;
+
 	if (a && a->arr)
-		free(a->arr);
+	{
+		i = 0;
+		while (i < a->height)
+		{
+			if (a->arr[i])
+				free(a->arr[i]);
+			i++;
+		}
+	}
 	if (a)
 		free(a);
 	return (0);
@@ -40,7 +50,7 @@ void	initialization(t_map *fdf)
 			&fdf->img.size_l, &fdf->img.endian);
 	fdf->m.r = 1;
 	fdf->m.fi = -120.0 / 180 * M_PI;
-	fdf->m.tet = 120.0 / 180 * M_PI;
+	fdf->m.tet = -120.0 / 180 * M_PI;
 	fdf->shift_x = WIN_WIDTH / 2;
 	fdf->shift_y = WIN_HEIGHT / 2;
 	fdf->m.x = fdf->m.r * sin(fdf->m.tet) * cos(fdf->m.fi);

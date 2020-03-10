@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 16:29:56 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/06 17:19:10 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/10 18:53:26 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@ int		key_press(int keycode, void *param)
 	fdf = (t_map *)param;
 	if (keycode == ESC)
 		exit(0);
-	if (keycode == LEFT)
-		fdf->shift_x -= 10;
-	if (keycode == RIGHT)
-		fdf->shift_x += 10;
-	if (keycode == UP)
-		fdf->shift_y -= 10;
-	if (keycode == DOWN)
-		fdf->shift_y += 10;
+	if (keycode == I)
+	{
+		fdf->m.fi = -120.0 / 180 * M_PI;
+		fdf->m.tet = -120.0 / 180 * M_PI;
+		fdf->shift_x = WIN_WIDTH / 2;
+		fdf->shift_y = WIN_HEIGHT / 2;
+	}
 	if (keycode == CTRL)
 		fdf->ctrl_press = 1;
 	if (keycode == PLUS)
@@ -73,8 +72,10 @@ int		mouse_move(int x, int y, void *param)
 	fdf = (t_map *)param;
 	if (fdf->mouse_press && fdf->ctrl_press == 0)
 	{
-		fdf->m.fi += (double)(x - fdf->x_mouse) / 10 / 180 * M_PI;
-		fdf->m.tet += (double)(y - fdf->y_mouse) / 10 / 180 * M_PI;
+		fdf->m.fi -= (double)(x - fdf->x_mouse) / 10 / 180 * M_PI;
+		fdf->m.tet -= (double)(y - fdf->y_mouse) / 10 / 180 * M_PI;
+		fdf->m.fi = angle(fdf->m.fi);
+		fdf->m.tet = angle(fdf->m.tet);
 		fdf->x_mouse = x;
 		fdf->y_mouse = y;
 		fdf->m.x = fdf->m.r * sin(fdf->m.tet) * cos(fdf->m.fi);

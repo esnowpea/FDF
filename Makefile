@@ -6,7 +6,7 @@
 #    By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/02 13:56:52 by esnowpea          #+#    #+#              #
-#    Updated: 2020/03/10 11:13:35 by esnowpea         ###   ########.fr        #
+#    Updated: 2020/03/10 11:13:50 by esnowpea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ HEADERS_DIR = ./inc/
 HEADERS = $(addprefix $(HEADERS_DIR), $(HEADERS_LIST))
 
 SRC_DIR = src/
-SRC_LIST =	main.c read_map.c ft_atoi_base.c hook.c mlx_put_line.c projection.c event_handler.c
+SRC_LIST =	main.c read_map.c ft_atoi_base.c hook.c mlx_put_line.c projection.c event_handler.c print_image.c
 SRC = $(addprefix $(SRC_DIR), $(SRC_LIST))
 
 OBJ_DIR = obj/
