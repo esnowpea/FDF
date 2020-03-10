@@ -6,7 +6,7 @@
 /*   By: esnowpea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/06 16:03:57 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/08 14:53:16 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/10 12:04:01 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,14 @@ void	get_black_image(t_map *fdf)
 
 void	print_image(t_map *fdf)
 {
-	int		i;
+	int i;
 
 	projection(fdf);
 	i = 0;
 	while (i < (fdf->width * fdf->height))
 	{
 		if (i % fdf->width < (fdf->width - 1))
-		{
 			mlx_line_put(fdf, fdf->arr[i], fdf->arr[i + 1]);
-		}
 		if (i / fdf->width < (fdf->height - 1))
 			mlx_line_put(fdf, fdf->arr[i], fdf->arr[i + fdf->width]);
 		i++;
