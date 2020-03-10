@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:23:28 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/10 18:41:20 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/10 19:12:25 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ t_map	*fill_map(char *av)
 	int		i;
 
 	if (!(out = (t_map*)malloc(sizeof(t_map))))
-		return (0);
+		return (free_fdf(out));
 	out->width = find_width(av);
 	out->height = find_height(av);
 	if (!(out->arr = (t_point**)malloc(sizeof(t_point) * out->height)))
@@ -110,21 +110,18 @@ t_map	*read_map(char *av)
 	t_map	*out;
 
 	if (!(out = fill_map(av)))
-		return (0);
+		return (free_fdf(out));
 	fd = open(av, O_RDONLY);
 	i = 0;
 	while (get_next_line(fd, &s) > 0)
 	{
 		up_to_low(&s);
 		if (!(out = split_nb(s, out, i++)))
-			return (0);
+			return (free_fdf(out));
 		free(s);
 	}
 	if (i == 0)
-	{
-		write(1, "No data found.\n", 15);
-		return (0);
-	}
+		return (free_fdf(out));
 	close(fd);
 	return (out);
 }
