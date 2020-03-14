@@ -6,13 +6,13 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:28:16 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/08 13:18:47 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/12 13:03:20 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	up_to_low(char **str)
+void	up_to_low1(char **str)
 {
 	char	*s;
 	int		i;
@@ -50,7 +50,7 @@ int		ft_atoi_base1(char *str, int base)
 	return (minus * a);
 }
 
-int		ft_atoi_base(char *str)
+int		ft_atoi_base_16(char *str)
 {
 	if (*str == '0' && *(str + 1) != 'x' && *(str + 1) != ' ' &&
 	*(str + 1) != '\0')

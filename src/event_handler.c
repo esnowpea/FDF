@@ -6,7 +6,7 @@
 /*   By: esnowpea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/06 16:03:57 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/10 15:22:53 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/14 15:56:47 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,10 @@ void	event_handler(void *param)
 	t_map	*fdf;
 
 	fdf = (t_map*)param;
-	mlx_hook(fdf->win, 2, 0, key_press, (void*)(fdf));
-	mlx_hook(fdf->win, 3, 0, key_release, (void*)(fdf));
-	mlx_hook(fdf->win, 17, 0, close_press, (void*)(fdf));
-	mlx_hook(fdf->win, 4, 0, mouse_press, (void*)(fdf));
-	mlx_hook(fdf->win, 6, 0, mouse_move, (void*)(fdf));
-	mlx_hook(fdf->win, 5, 0, mouse_release, (void*)(fdf));
+	mlx_hook(fdf->win, 2, 0, key_press, param);
+	mlx_hook(fdf->win, 3, 0, key_release, param);
+	mlx_hook(fdf->win, 17, 0, close_press, param);
+	mlx_hook(fdf->win, 4, 0, mouse_press, param);
+	mlx_hook(fdf->win, 6, 0, mouse_move, param);
+	mlx_hook(fdf->win, 5, 0, mouse_release, param);
 }

@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:23:55 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/10 19:13:51 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/14 15:47:16 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	*free_fdf(t_map *a)
 {
 	int		i;
 
-	write(1, "No data found.\n", 15);
 	if (a && a->arr)
 	{
 		i = 0;
@@ -28,7 +27,10 @@ void	*free_fdf(t_map *a)
 		}
 	}
 	if (a)
+	{
+		write(1, "No data found.\n", 15);
 		free(a);
+	}
 	return (0);
 }
 
@@ -54,8 +56,8 @@ void	initialization(t_map *fdf)
 	fdf->m.tet = -120.0 / 180 * M_PI;
 	fdf->shift_x = WIN_WIDTH / 2;
 	fdf->shift_y = WIN_HEIGHT / 2;
-	scale(fdf, 1.0 / 2 * WIN_WIDTH / fdf->width, 1.0 / 12 * WIN_WIDTH /
-	fdf->width);
+	scale(fdf, 1.0 / 2 * WIN_WIDTH / fdf->width,
+			1.0 / 12 * WIN_WIDTH / fdf->width);
 }
 
 int		main(int ac, char **av)

@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:23:28 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/10 19:12:25 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/12 13:11:27 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,14 @@ t_map	*split_nb(char *str, t_map *a, int y)
 	{
 		while (*str == ' ')
 			str++;
-		a->arr[y][i] = fill_point((double)(i % a->width - a->width / 2),
-				(double)(y - a->height / 2), (double)ft_atoi_base(str));
+		a->arr[y][i] = fill_point((double)(i % a->width) -
+				(double)(a->width - 1) / 2,
+				(double)y - (double)(a->height - 1) / 2,
+				(double)ft_atoi_base_16(str));
 		while (*str && *str != ' ' && *str != ',')
 			str++;
 		if (*str == ',')
-			a->arr[y][i].color = ft_atoi_base(str + 1);
+			a->arr[y][i].color = ft_atoi_base_16(str + 1);
 		else
 			a->arr[y][i].color = 0xffffff;
 		while (*str && *str != ' ')
@@ -115,7 +117,7 @@ t_map	*read_map(char *av)
 	i = 0;
 	while (get_next_line(fd, &s) > 0)
 	{
-		up_to_low(&s);
+		up_to_low1(&s);
 		if (!(out = split_nb(s, out, i++)))
 			return (free_fdf(out));
 		free(s);

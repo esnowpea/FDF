@@ -6,7 +6,7 @@
 #    By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/02 13:56:52 by esnowpea          #+#    #+#              #
-#    Updated: 2020/03/12 12:27:04 by esnowpea         ###   ########.fr        #
+#    Updated: 2020/03/14 15:33:29 by esnowpea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,9 @@ LIBFT = $(LIBFT_DIR)libft.a
 LIBFT_DIR = ./libft/
 LIBFT_HEADERS = $(LIBFT_DIR)inc/
 
-LIBMLX = $(LIBFT_DIR)libmlx.a
+LIBMLX = $(LIBMLX_DIR)libmlx.a
 LIBMLX_DIR = ./minilibx_macos/
-LIBMLX_HEADERS = $(LIBFT_DIR)
+LIBMLX_HEADERS = $(LIBMLX_DIR)
 
 HEADERS_LIST = fdf.h
 HEADERS_DIR = ./inc/

@@ -6,31 +6,15 @@
 /*   By: esnowpea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/10 15:23:08 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/10 18:50:19 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/14 15:56:47 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void		get_black_image(t_map *fdf)
+double		sqr(double a)
 {
-	int		i;
-	int		j;
-
-	i = 0;
-	while (i < WIN_WIDTH)
-	{
-		j = 0;
-		while (j < WIN_HEIGHT)
-		{
-			fdf->img.data[i * 4 + 4 * WIN_WIDTH * j] = 0;
-			fdf->img.data[i * 4 + 4 * WIN_WIDTH * j + 1] = 0;
-			fdf->img.data[i * 4 + 4 * WIN_WIDTH * j + 2] = 0;
-			fdf->img.data[i * 4 + 4 * WIN_WIDTH * j + 3] = 0;
-			j++;
-		}
-		i++;
-	}
+	return (a * a);
 }
 
 double		length_r(t_point a)
@@ -57,9 +41,9 @@ void		print_side(t_map *fdf, int i, int j)
 		while (j != max_j)
 		{
 			if (i < (fdf->height - 1))
-				mlx_line_put(fdf, fdf->arr[i][j], fdf->arr[i + 1][j]);
+				img_line_put(&fdf->img, fdf->arr[i][j], fdf->arr[i + 1][j]);
 			if (j < (fdf->width - 1))
-				mlx_line_put(fdf, fdf->arr[i][j], fdf->arr[i][j + 1]);
+				img_line_put(&fdf->img, fdf->arr[i][j], fdf->arr[i][j + 1]);
 			j += sign_j;
 		}
 		i += sign_i;
@@ -78,5 +62,5 @@ void		print_image(t_map *fdf)
 	else if (fdf->m.fi > -180 && fdf->m.fi <= 0 && fdf->m.tet < 0)
 		print_side(fdf, 0, 0);
 	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img.img_ptr, 0, 0);
-	get_black_image(fdf);
+	img_black(&fdf->img);
 }

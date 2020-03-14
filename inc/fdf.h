@@ -6,7 +6,7 @@
 /*   By: esnowpea <esnowpea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 15:24:34 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/12 11:57:53 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/03/14 15:56:47 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@ typedef struct			s_line
 	int					sign_y;
 	int					error;
 	int					derror;
+	double				step_r;
+	double				step_g;
+	double				step_b;
 	double				color_r;
 	double				color_g;
 	double				color_b;
@@ -93,13 +96,15 @@ typedef struct			s_map
 
 void					*free_fdf(t_map *a);
 t_map					*read_map(char *av);
-int						ft_atoi_base(char *str);
-void					mlx_line_put(t_map *fdf, t_point p1, t_point p2);
+int						ft_atoi_base_16(char *str);
+void					img_pixel_put(t_img *img, t_point p1);
+void					img_line_put(t_img *img, t_point p1, t_point p2);
+void					img_black(t_img *img);
 double					sqr(double a);
 double					angle(double fi);
 double					length_r(t_point a);
 void					vector_mod(t_point *a, double b);
-void					up_to_low(char **s);
+void					up_to_low1(char **s);
 t_point					fill_point(double x, double y, double z);
 void					projection(t_map *fdf);
 void					scale(t_map *fdf, double xy, double z);
