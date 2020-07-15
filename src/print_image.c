@@ -6,7 +6,7 @@
 /*   By: esnowpea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/10 15:23:08 by esnowpea          #+#    #+#             */
-/*   Updated: 2020/03/14 15:56:47 by esnowpea         ###   ########.fr       */
+/*   Updated: 2020/07/15 17:38:36 by esnowpea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,22 @@ void		print_side(t_map *fdf, int i, int j)
 	}
 }
 
+void		print_help(t_map *fdf)
+{
+	mlx_string_put(fdf->mlx, fdf->win, 5, 0, 0xFFFFFF,
+			"Controls");
+	mlx_string_put(fdf->mlx, fdf->win, 5, 30, 0xFFFFFF,
+			"Isometry       - I");
+	mlx_string_put(fdf->mlx, fdf->win, 5, 60, 0xFFFFFF,
+			"Rotation       - Mouse");
+	mlx_string_put(fdf->mlx, fdf->win, 5, 90, 0xFFFFFF,
+			"Move           - Mouse + Ctrl");
+	mlx_string_put(fdf->mlx, fdf->win, 5, 120, 0xFFFFFF,
+			"Zoom           - Scroll");
+	mlx_string_put(fdf->mlx, fdf->win, 5, 150, 0xFFFFFF,
+			"Height         - +/-");
+}
+
 void		print_image(t_map *fdf)
 {
 	projection(fdf);
@@ -62,5 +78,6 @@ void		print_image(t_map *fdf)
 	else if (fdf->m.fi > -180 && fdf->m.fi <= 0 && fdf->m.tet < 0)
 		print_side(fdf, 0, 0);
 	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img.img_ptr, 0, 0);
+	print_help(fdf);
 	img_black(&fdf->img);
 }
