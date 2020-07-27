@@ -56,8 +56,12 @@ void	initialization(t_map *fdf)
 	fdf->m.tet = -120.0 / 180 * M_PI;
 	fdf->shift_x = WIN_WIDTH / 2;
 	fdf->shift_y = WIN_HEIGHT / 2;
-	scale(fdf, 1.0 / 2 * WIN_WIDTH / fdf->width,
-			1.0 / 12 * WIN_WIDTH / fdf->width);
+	if (fdf->width > fdf->height)
+		scale(fdf, 1.0 / 2 * WIN_WIDTH / fdf->width,
+				1.0 / 12 * WIN_WIDTH / fdf->width);
+	else
+		scale(fdf, 1.0 / 2 * WIN_HEIGHT / fdf->height,
+			  1.0 / 12 * WIN_HEIGHT / fdf->height);
 }
 
 int		main(int ac, char **av)

@@ -7,13 +7,14 @@ add_executable(fdf_new src/main.c inc/fdf.h src/read_map.c src/ft_atoi_base.c sr
 target_include_directories(fdf_new PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/inc)
 target_include_directories(fdf_new PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_include_directories(fdf_new PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/libft/inc)
+target_include_directories(fdf_new PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Libft/inc)
 #find_library(FT ft)
-set(FT ${CMAKE_CURRENT_SOURCE_DIR}/libft/libft.a)
+set(FT ${CMAKE_CURRENT_SOURCE_DIR}/Libft/libft.a)
 target_link_libraries(fdf_new ${FT})
 
-target_include_directories(fdf_new PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/minilibx_macos)
-find_library(MLX mlx)
+target_include_directories(fdf_new PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/minilibx_macos/inc)
+#find_library(MLX mlx)
+set(MLX ${CMAKE_CURRENT_SOURCE_DIR}/minilibx_macos/libmlx.a)
 target_link_libraries(fdf_new ${MLX})
 
 target_link_libraries(fdf_new "-framework OpenGL")

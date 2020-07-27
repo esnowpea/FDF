@@ -8,114 +8,112 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug"/>
+				<Option working_dir="/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug"/>
+				<Option working_dir="/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug"/>
+				<Option working_dir="/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="fdf_new">
-				<Option output="/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/fdf_new" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug"/>
+				<Option output="/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/fdf_new" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/esnowpea/CLionProjects/fdf_new/inc"/>
-					<Add directory="/Users/esnowpea/CLionProjects/fdf_new"/>
-					<Add directory="/Users/esnowpea/CLionProjects/fdf_new/libft/inc"/>
-					<Add directory="/Users/esnowpea/CLionProjects/fdf_new/minilibx_macos"/>
+					<Add directory="/Users/esnowpea/CLionProjects/fdf_eval/inc"/>
+					<Add directory="/Users/esnowpea/CLionProjects/fdf_eval"/>
+					<Add directory="/Users/esnowpea/CLionProjects/fdf_eval/Libft/inc"/>
+					<Add directory="/Users/esnowpea/CLionProjects/fdf_eval/minilibx_macos/inc"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 fdf_new"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 fdf_new"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="fdf_new/fast">
-				<Option output="/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/fdf_new" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug"/>
+				<Option output="/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/fdf_new" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/esnowpea/CLionProjects/fdf_new/inc"/>
-					<Add directory="/Users/esnowpea/CLionProjects/fdf_new"/>
-					<Add directory="/Users/esnowpea/CLionProjects/fdf_new/libft/inc"/>
-					<Add directory="/Users/esnowpea/CLionProjects/fdf_new/minilibx_macos"/>
+					<Add directory="/Users/esnowpea/CLionProjects/fdf_eval/inc"/>
+					<Add directory="/Users/esnowpea/CLionProjects/fdf_eval"/>
+					<Add directory="/Users/esnowpea/CLionProjects/fdf_eval/Libft/inc"/>
+					<Add directory="/Users/esnowpea/CLionProjects/fdf_eval/minilibx_macos/inc"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 fdf_new/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 fdf_new/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/esnowpea/CLionProjects/fdf_eval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/esnowpea/CLionProjects/fdf_new/inc/fdf.h">
+		<Unit filename="/Users/esnowpea/CLionProjects/fdf_eval/inc/fdf.h">
 			<Option target="fdf_new"/>
 		</Unit>
-		<Unit filename="/Users/esnowpea/CLionProjects/fdf_new/src/event_handler.c">
+		<Unit filename="/Users/esnowpea/CLionProjects/fdf_eval/src/event_handler.c">
 			<Option target="fdf_new"/>
 		</Unit>
-		<Unit filename="/Users/esnowpea/CLionProjects/fdf_new/src/ft_atoi_base.c">
+		<Unit filename="/Users/esnowpea/CLionProjects/fdf_eval/src/ft_atoi_base.c">
 			<Option target="fdf_new"/>
 		</Unit>
-		<Unit filename="/Users/esnowpea/CLionProjects/fdf_new/src/hook.c">
+		<Unit filename="/Users/esnowpea/CLionProjects/fdf_eval/src/hook.c">
 			<Option target="fdf_new"/>
 		</Unit>
-		<Unit filename="/Users/esnowpea/CLionProjects/fdf_new/src/main.c">
+		<Unit filename="/Users/esnowpea/CLionProjects/fdf_eval/src/main.c">
 			<Option target="fdf_new"/>
 		</Unit>
-		<Unit filename="/Users/esnowpea/CLionProjects/fdf_new/src/mlx_put_line.c">
+		<Unit filename="/Users/esnowpea/CLionProjects/fdf_eval/src/mlx_put_line.c">
 			<Option target="fdf_new"/>
 		</Unit>
-		<Unit filename="/Users/esnowpea/CLionProjects/fdf_new/src/print_image.c">
+		<Unit filename="/Users/esnowpea/CLionProjects/fdf_eval/src/print_image.c">
 			<Option target="fdf_new"/>
 		</Unit>
-		<Unit filename="/Users/esnowpea/CLionProjects/fdf_new/src/projection.c">
+		<Unit filename="/Users/esnowpea/CLionProjects/fdf_eval/src/projection.c">
 			<Option target="fdf_new"/>
 		</Unit>
-		<Unit filename="/Users/esnowpea/CLionProjects/fdf_new/src/read_map.c">
+		<Unit filename="/Users/esnowpea/CLionProjects/fdf_eval/src/read_map.c">
 			<Option target="fdf_new"/>
 		</Unit>
-		<Unit filename="/Users/esnowpea/CLionProjects/fdf_new/CMakeLists.txt">
+		<Unit filename="/Users/esnowpea/CLionProjects/fdf_eval/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

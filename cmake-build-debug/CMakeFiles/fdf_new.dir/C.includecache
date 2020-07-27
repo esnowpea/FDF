@@ -6,6 +6,34 @@
 
 #IncludeRegexTransform: 
 
+../Libft/inc/ft_printf.h
+zconf.h
+-
+libft.h
+../Libft/inc/libft.h
+
+../Libft/inc/get_next_line.h
+libft.h
+../Libft/inc/libft.h
+sys/types.h
+-
+sys/uio.h
+-
+limits.h
+-
+
+../Libft/inc/libft.h
+stdlib.h
+-
+unistd.h
+-
+string.h
+-
+ft_printf.h
+../Libft/inc/ft_printf.h
+get_next_line.h
+../Libft/inc/get_next_line.h
+
 ../inc/fdf.h
 libft.h
 ../inc/libft.h
@@ -26,27 +54,9 @@ fcntl.h
 stdio.h
 -
 
-../libft/inc/get_next_line.h
-libft.h
-../libft/inc/libft.h
-sys/types.h
--
-sys/uio.h
--
-limits.h
--
+../minilibx_macos/inc/mlx.h
 
-../libft/inc/libft.h
-stdlib.h
--
-unistd.h
--
-string.h
--
-
-../minilibx_macos/mlx.h
-
-/Users/esnowpea/CLionProjects/fdf_new/src/hook.c
+/Users/esnowpea/CLionProjects/fdf_eval/src/main.c
 fdf.h
-/Users/esnowpea/CLionProjects/fdf_new/src/fdf.h
+/Users/esnowpea/CLionProjects/fdf_eval/src/fdf.h
 
