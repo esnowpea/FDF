@@ -32,6 +32,5 @@ Example:
 
 ~ ./fillit valid_19
 
-![42.fdf map](/images/42.png)
-
 ```
+![42.fdf map](/images/42.png)
